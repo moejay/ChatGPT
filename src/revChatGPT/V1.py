@@ -444,6 +444,7 @@ class Chatbot:
         for i in self.continue_write(
             conversation_id=cid,
             timeout=timeout,
+            model=model,
             auto_continue=False,
         ):
             i["message"] = message + i["message"]
@@ -990,6 +991,7 @@ class AsyncChatbot(Chatbot):
             async for i in self.continue_write(
                 conversation_id=cid,
                 timeout=timeout,
+                model=model,
                 auto_continue=False,
             ):
                 i["message"] = message + i["message"]
